@@ -19,3 +19,11 @@ target_include_directories(
                             ${CUDA_INCLUDE_DIRS})
 file(GLOB_RECURSE SO_FILES "lib/*.so")
 target_link_libraries(${PROJECT_NAME} INTERFACE ${SO_FILES} ${CUDA_LIBRARIES})
+
+if(NOT ${OUT} STREQUAL "")
+  message("Set output directory to ${OUT}")
+  file(GLOB_RECURSE BINS "bin/*")
+  file(COPY ${BINS} DESTINATION ${OUT_BIN}/tensorrt)
+  file(GLOB_RECURSE LIBS "lib/lib*")
+  file(COPY ${LIBS} DESTINATION ${OUT_LIB})
+endif()
