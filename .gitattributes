@@ -1,0 +1,2 @@
+targets/x86_64-linux-gnu/lib/libnvinfer.so.8.5.1 filter=lfs diff=lfs merge=lfs -text
+targets/x86_64-linux-gnu/lib/libnvinfer_builder_resource.so.8.5.1 filter=lfs diff=lfs merge=lfs -text
